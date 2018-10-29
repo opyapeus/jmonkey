@@ -28,7 +28,7 @@ Then access to localhost:3000.
 
 ## Documentation
 
-- [API documentation on Hackage](#TODO)
+- [API documentation on Hackage](http://hackage.haskell.org/package/jmonkey)
 
 ## Contribution
 
