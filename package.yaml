@@ -1,5 +1,5 @@
 name:                jmonkey
-version:             0.1.0.0
+version:             0.1.0.1
 github:              "opyapeus/jmonkey"
 license:             MIT
 author:              "peus"
@@ -11,8 +11,8 @@ extra-source-files:
 - ChangeLog.md
 
 # Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
+synopsis:            Jmonkey is very restricted but handy EDSL for JavaScript.
+category:            Web
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
@@ -27,23 +27,6 @@ dependencies:
 
 library:
   source-dirs: src
-
-executables:
-  jmonkey-example-exe:
-    main:                Main.hs
-    source-dirs:         example
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - jmonkey
-    - lucid
-    - clay
-    - warp
-    - wai
-    - http-types
-    - text
 
 tests:
   jmonkey-test:
