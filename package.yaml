@@ -1,0 +1,57 @@
+name:                jmonkey
+version:             0.1.0.0
+github:              "opyapeus/jmonkey"
+license:             MIT
+author:              "peus"
+maintainer:          "opyapeus@gmail.com"
+copyright:           "2018 peus"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/opyapeus/jmonkey#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- free
+- jmacro
+- casing
+
+library:
+  source-dirs: src
+
+executables:
+  jmonkey-example-exe:
+    main:                Main.hs
+    source-dirs:         example
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - jmonkey
+    - lucid
+    - clay
+    - warp
+    - wai
+    - http-types
+    - text
+
+tests:
+  jmonkey-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - jmonkey
