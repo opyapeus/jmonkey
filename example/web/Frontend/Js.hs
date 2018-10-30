@@ -9,13 +9,19 @@ import           Data.ToAttribute
 
 jMonkeyJs :: JMonkey
 jMonkeyJs = do
-    -- Header to be fixed from the middle
+    semiFixedHeader
+    autoChangeClass
+    peopleFilter
+
+semiFixedHeader :: JMonkey
+semiFixedHeader = do
     header <- select $ toAttr (Class Head)
     onScroll win $ ifel (YOffset Grater 200)
                         (add header $ toAttr (Class HeadFixed))
                         (remove header $ toAttr (Class HeadFixed))
 
-    -- Loops automatically change classes
+autoChangeClass :: JMonkey
+autoChangeClass = do
     d <- select $ toAttr (Class First)
     onTime Endless 3000
         $ ifel
@@ -37,7 +43,8 @@ jMonkeyJs = do
                   add d $ toAttr (Class First)
               )
 
-    -- People filter
+peopleFilter :: JMonkey
+peopleFilter = do
     groupMan   <- select $ toAttr (Class $ Group Man)
     groupWoman <- select $ toAttr (Class $ Group Woman)
     groupTrans <- select $ toAttr (Class $ Group Trans)
