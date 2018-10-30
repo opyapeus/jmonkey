@@ -15,7 +15,7 @@
 -- If target element(s) have "hide" class then remove, otherwise add "hide" class.
 --
 -- @
--- ifel (Having target (Class "hide"))
+-- ifel (Possess target (Class "hide"))
 --      (remove target (Class "hide"))
 --      (add target (Class "hide"))
 -- @
